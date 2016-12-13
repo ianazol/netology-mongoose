@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <title>Task24</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <br/>
+                <h2>Домашняя работа nodejs + express + mongoose</h2>
+                <br/>
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav">
+                            <li {{#if pageHome}} class="active" {{/if}}><a href="/">Задачи</a></li>
+                            <li {{#if pageUser}} class="active" {{/if}}><a href="/users">Пользователи</a></li>
+                            <li><a href="/stat">Статистика</a></li>
+                        </ul>
+                        <div class="navbar-right" style="margin-right:0 !important">
+                            {{#if pageHome}}<a href="/add-task/" type="button" class="btn btn-primary navbar-btn ">Добавить задачу</a>{{/if}}
+                            {{#if pageUser}}<a href="/add-user/" type="button" class="btn btn-primary navbar-btn ">Добавить пользователя</a>{{/if}}
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+                {{{body}}}
+
+            <br/>
+            <br/>
+            <footer>
+                <p>&copy; Iana Zolnikova</p>
+            </footer>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>

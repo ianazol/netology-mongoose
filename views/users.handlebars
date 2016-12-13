@@ -1,0 +1,11 @@
+<table class="table table-striped">
+    {{#each users}}
+        <tr>
+            <td width="70%">{{name}} {{lastname}}</td>
+            <td align="right">
+                <a href="/edit-user/{{id}}">Редактировать</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="/delete-user/{{id}}">Удалить</a>
+            </td>
+        </tr>
+    {{/each}}
+</table>

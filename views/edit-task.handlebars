@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Редактирование задачи</h3>
+            </div>
+            <div class="panel-body">
+                <form method="post" action="/edit-task/{{task.id}}" name="task-add">
+                    <div class="form-group">
+                        <label for="name">Заголовок</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Заголовок задачи" value="{{task.name}}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Описание</label>
+                        <textarea id="description" name="description" class="form-control" rows="5" placeholder="Описание задачи" required>{{task.description}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline">Дедлайн</label>
+                        <input type="date" name="deadline" class="form-control" id="deadline" value="{{task.deadline}}" required>
+                    </div>
+                    <button type="submit" class="btn btn-info">Сохранить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

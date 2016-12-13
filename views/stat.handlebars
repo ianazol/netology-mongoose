@@ -1,0 +1,16 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th width="70%">Имя и фамилия</th>
+            <th align="right">Количество закрытых задач</th>
+        </tr>
+    </thead>
+    {{#each users}}
+        <tr>
+            <td width="70%">{{name}} {{lastname}}</td>
+            <td>
+                {{count}}
+            </td>
+        </tr>
+    {{/each}}
+</table>

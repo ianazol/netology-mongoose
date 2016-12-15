@@ -10,7 +10,10 @@ var taskSchema = mongoose.Schema({
         required: true
     },
     user: mongoose.Schema.Types.ObjectId,
-    deadline: Date,
+    deadline: {
+        type: Date,
+        required: true
+    },
     isOpen: {
         type: Boolean,
         default: false

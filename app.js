@@ -6,18 +6,22 @@ const stat       = require('./lib/stat');
 const mongoose   = require('mongoose');
 const app        = express();
 const port       = process.env.PORT || 3000;
+const Handlebars = require('express3-handlebars');
+const paginate   = require('handlebars-paginate');
+
+let handlebars = Handlebars.create({
+    defaultLayout:'main',
+    helpers: {
+        'paginate': paginate
+    }
+});
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
 
 mongoose.connect('mongodb://localhost/tasks');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({"extended": true}));
-
-var handlebars = require('express3-handlebars').create({
-    defaultLayout:'main'
-});
-app.engine('handlebars', handlebars.engine);
-app.set('view engine', 'handlebars');
-
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', task.getList);
